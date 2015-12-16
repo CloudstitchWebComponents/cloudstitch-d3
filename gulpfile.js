@@ -33,8 +33,8 @@ gulp.task('copy', function () {
     'bower_components/**/*'
   ]).pipe(gulp.dest('dist'));
 
-  var vulcanized = gulp.src(['cloudstitch-d3.html'])
-    .pipe($.rename('cloudstitch-d3.vulcanized.html'))
+  var vulcanized = gulp.src(['breaking-news-feed.html'])
+    .pipe($.rename('breaking-news-feed.vulcanized.html'))
     .pipe(gulp.dest('dist/elements'));
 });
 
@@ -43,7 +43,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 // Vulcanize imports
 gulp.task('vulcanize', function () {
   var DEST_DIR = '.';
-  return gulp.src('dist/elements/cloudstitch-d3.vulcanized.html')
+  return gulp.src('dist/elements/breaking-news-feed.vulcanized.html')
     .pipe($.vulcanize({
       stripComments: true,
       inlineCss: true,
@@ -62,19 +62,18 @@ gulp.task('deploy:remote', function() {
     region: 'us-west-2'
   });
   return gulp.src(
-        // [
-        //     'dist/elements/*vulcanized*'
-        // ],
-        // {
-        //     base: 'dist/elements'
-        // }
-        ['README.md'],{}
+        [
+            'dist/elements/*vulcanized*'
+        ],
+        {
+            base: 'dist/elements'
+        }
   )
   .pipe(s3({
       Bucket: 'components.cloudstitch.com', //  Required
       ACL:    'public-read',
       keyTransform: function(relative_filename) {
-        var fname = 'elements/' + location + '/cloudstitch-d3/' + relative_filename;
+        var fname = 'elements/' + location + '/breaking-news-feed/' + relative_filename;
         console.log(fname);
         return fname;
       }
