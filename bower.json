@@ -1,6 +1,6 @@
 {
   "name": "cloudstitch-d3",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "authors": [
     "Anonymous <ted@cloudstitch.com>"
   ],
@@ -20,7 +20,7 @@
     "/test/"
   ],
   "dependencies": {
-    "cloudstitch-box": "CloudstitchWebComponents/cloudstitch-box",
+    "cloudstitch-box": "CloudstitchWebComponents/cloudstitch-box#~1.1.4",
     "iron-ajax": "PolymerElements/iron-ajax#~1.1.1",
     "iron-dropdown": "PolymerElements/iron-dropdown#~1.0.6",
     "iron-form": "PolymerElements/iron-form#~1.0.13",
