@@ -28,7 +28,8 @@ Example:
       label="{{label}}" 
       projection="items" 
       data="{{sheetdata}}"
-      domain="{{domain}}"
+      file-domain="{{fileDomain}}"
+      data-domain="{{dataDomain}}"
       proto="{{proto}}"
       style-file="{{styleFile}}"
       script-file="{{scriptFile}}"
@@ -72,9 +73,17 @@ Example:
       /**
        * The domain from which to load the assets.
        */
-      domain: {
+      fileDomain: {
         type: String,
         value: 'apps.cloudstitch.io'
+      },
+
+      /**
+       * The domain from which to load the data.
+       */
+      dataDomain: {
+        type: String,
+        value: 'api.cloudstitch.com'
       },
 
       /**
